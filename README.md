@@ -1,3 +1,3 @@
 # WebsiteDongHo
 
-#Các chức năng
+# Sử dụng công nghệ
