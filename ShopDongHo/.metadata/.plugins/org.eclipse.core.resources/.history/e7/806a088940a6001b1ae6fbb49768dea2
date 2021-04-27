@@ -1,0 +1,15 @@
+package com.nguyenxuantuan.shopdongho.project.user;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/user")
+public class CheckOutController {
+	
+	@GetMapping("/checkout")
+	public String getChetOut() {
+		return "user/checkout";
+	}
+}

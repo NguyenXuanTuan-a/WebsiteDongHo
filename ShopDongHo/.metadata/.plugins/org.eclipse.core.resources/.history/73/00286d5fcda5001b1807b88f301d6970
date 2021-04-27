@@ -1,0 +1,28 @@
+       <div class="shopping__cart" th:fragment="shopping">
+                <div class="shopping__cart__inner">
+                    <div class="offsetmenu__close__btn">
+                        <a href="#"><i class="zmdi zmdi-close"></i></a>
+                    </div>
+                    <div class="shp__cart__wrap" th:each="entry: ${#session.getAttribute('cart')}">
+                        <div class="shp__single__product" >
+                            <div class="shp__pro__thumb">
+                                <a href="#">
+                                    <img th:src="@{'/images/flags/'+${entry.value.productDTO.image}}" alt="product images">
+                                </a>
+                            </div>
+                            <div class="shp__pro__details">
+                                <h2><a href="product-details.html" th:text="${entry.value.productDTO.name}"></a></h2>
+                                <span class="quantity" th:text="'QTY: '+ ${entry.value.qty}"></span>
+                                <span class="shp__price" th:text="${entry.value.price * entry.value.qty}"></span>
+                            </div>
+                            <div class="remove__btn">
+                                <a th:onclick="'deleteCart(\'' + ${entry.value.productDTO} + '\')'"><i class="zmdi zmdi-close"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="shopping__btn">
+                        <li><a th:href="@{/cart}">View Cart</a></li>
+                        <li class="shp__checkout"><a href="checkout.html">Checkout</a></li>
+                    </ul>
+                </div>
+            </div>

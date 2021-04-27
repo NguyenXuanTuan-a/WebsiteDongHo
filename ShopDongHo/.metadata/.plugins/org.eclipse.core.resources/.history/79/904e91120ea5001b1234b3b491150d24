@@ -1,0 +1,23 @@
+package com.nguyenxuantuan.shopdongho.project.user;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.nguyenxuantuan.shopdongho.project.model.ProductDTO;
+import com.nguyenxuantuan.shopdongho.project.service.ProductService;
+
+@Controller
+public class ProductDeatilController {
+	@Autowired
+	private ProductService productService;
+	@GetMapping("/product-detail/{id}")
+	public String getProductDeatil(@PathVariable()int id, HttpServletRequest request) {
+		ProductDTO productDTO = productService.getById(id);
+		request.setAttribute("productDTO", productDTO);
+		return "user/product-details";
+	}
+}

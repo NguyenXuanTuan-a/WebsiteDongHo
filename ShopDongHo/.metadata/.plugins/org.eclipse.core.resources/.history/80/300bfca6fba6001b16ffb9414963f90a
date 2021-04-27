@@ -1,0 +1,5 @@
+package com.nguyenxuantuan.shopdongho.project.entity;
+
+public class OrderDetailEntity {
+
+}

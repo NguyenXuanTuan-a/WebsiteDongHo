@@ -1,0 +1,5 @@
+package com.nguyenxuantuan.shopdongho.project.dao;
+
+public class OrderDetailDao {
+
+}

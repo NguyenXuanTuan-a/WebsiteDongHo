@@ -1,0 +1,28 @@
+package com.nguyenxuantuan.shopdongho.project.admin.Controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.nguyenxuantuan.shopdongho.project.model.OrderDetailDTO;
+import com.nguyenxuantuan.shopdongho.project.service.OrderDetailService;
+
+@Controller
+@RequestMapping("/admin")
+public class AdminOrderController {
+	
+	@Autowired
+	private OrderDetailService orderDetailService;
+	
+	@GetMapping("order")
+	public String getOrder(HttpServletRequest request) {
+		List<OrderDetailDTO> orderDetailDTOs = orderDetailService.getAll();
+		request.setAttribute("order", orderDetailDTOs);
+		return "admin/order";
+	}
+}

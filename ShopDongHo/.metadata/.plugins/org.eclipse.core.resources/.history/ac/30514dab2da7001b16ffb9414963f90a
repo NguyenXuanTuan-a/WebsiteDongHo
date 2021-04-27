@@ -1,0 +1,5 @@
+package com.nguyenxuantuan.shopdongho.project.admin.Controller;
+
+public class AdminOrderController {
+
+}

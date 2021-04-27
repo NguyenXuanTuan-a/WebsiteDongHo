@@ -1,0 +1,51 @@
+package com.nguyenxuantuan.shopdongho.project.user;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.nguyenxuantuan.shopdongho.project.model.CategoriesDTO;
+import com.nguyenxuantuan.shopdongho.project.model.SubCategoriesDTO;
+import com.nguyenxuantuan.shopdongho.project.service.CategoriesService;
+import com.nguyenxuantuan.shopdongho.project.service.ProductService;
+import com.nguyenxuantuan.shopdongho.project.service.SubCategoriesService;
+
+@Controller
+public class IndexUserController {
+	@Autowired
+	private CategoriesService categoriesService;
+	@Autowired
+	private SubCategoriesService subCategoriesService;
+	@Autowired
+	private ProductService productService;
+	@GetMapping({"/index" })
+	public String index(HttpServletRequest request) {
+		List<CategoriesDTO>categoriesDTOs = categoriesService.getAll();
+		request.setAttribute("categoriesDTOs", categoriesDTOs);
+		
+		List<SubCategoriesDTO>subCategoriesDTOs = subCategoriesService.getAll();
+		request.setAttribute("subCategoriesDTOs", subCategoriesDTOs);
+		return "user/index";
+	}
+	@GetMapping("/login")
+	public String getLogin(HttpServletRequest request, @RequestParam(name="e" , required = false)String string) {
+		if(string != null) {
+			request.setAttribute("e", string);
+		}
+		return "user/login";
+	}
+	@GetMapping("/member")
+	public String getMember(HttpServletRequest request) {
+		if (request.isUserInRole("ADMIN")) {
+			return "redirect:/admin/";
+
+		}
+		return "redirect:/index";
+	}
+
+}

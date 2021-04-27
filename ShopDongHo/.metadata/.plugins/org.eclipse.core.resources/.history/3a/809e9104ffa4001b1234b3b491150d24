@@ -1,0 +1,23 @@
+package com.nguyenxuantuan.shopdongho.project.user;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.nguyenxuantuan.shopdongho.project.model.CategoriesDTO;
+import com.nguyenxuantuan.shopdongho.project.model.SubCategoriesDTO;
+import com.nguyenxuantuan.shopdongho.project.service.CategoriesService;
+
+@Controller
+public class ProductGirdController {
+	@Autowired
+	private CategoriesService categoriesService;
+	
+	@GetMapping("/product-grid/{id}")
+	public String get(@PathVariable()int id_categories) {
+		CategoriesDTO categoriesDTO = categoriesService.getListProduct(id_categories) ;
+		System.out.println(categoriesDTO);
+		return "user/product-grid";
+	}
+}

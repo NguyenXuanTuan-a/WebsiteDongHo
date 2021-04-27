@@ -1,0 +1,181 @@
+<!doctype html >
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Home</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" type="image/x-icon"
+	th:href="@{user/images/favicon.ico}">
+<link rel="apple-touch-icon" th:href="apple-touch-icon.png">
+
+
+<!-- All css files are included here. -->
+<!-- Bootstrap fremwork main css -->
+<link rel="stylesheet" th:href="@{/user/css/bootstrap.min.css}">
+<!-- Owl Carousel min css -->
+<link rel="stylesheet" th:href="@{/user/css/owl.carousel.min.css}">
+<link rel="stylesheet" th:href="@{/user/css/owl.theme.default.min.css}">
+<!-- This core.css file contents all plugings css file. -->
+<link rel="stylesheet" th:href="@{/user/css/core.css}">
+<!-- Theme shortcodes/elements style -->
+<link rel="stylesheet" th:href="@{/user/css/shortcode/shortcodes.css}">
+<!-- Theme main style -->
+<link rel="stylesheet" th:href="@{/user/css/style.css}">
+<!-- Responsive css -->
+<link rel="stylesheet" th:href="@{/user/css/responsive.css}">
+<!-- User style -->
+<link rel="stylesheet" th:href="@{/user/css/custom.css}">
+
+
+<!-- Modernizr JS -->
+<script th:src="@{/user/js/vendor/modernizr-3.5.0.min.js}"></script>
+</head>
+
+<body>
+	<!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Body main wrapper start -->
+	<div class="wrapper">
+		<!-- Start Header Style -->
+		<header th:replace="common/user/header :: header"></header>
+		<!-- End Header Area -->
+		<div class="body__overlay"></div>
+		<!-- Start Offset Wrapper -->
+		<div class="offset__wrapper">
+			<!-- Start Search Popap -->
+			<div class="search__area">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="search__inner">
+								<form action="#" method="get">
+									<input placeholder="Search here... " type="text">
+									<button type="submit"></button>
+								</form>
+								<div class="search__close__btn">
+									<span class="search__close__btn_icon"><i
+										class="zmdi zmdi-close"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ht__bradcaump__area"
+			style="background: rgba(0, 0, 0, 0) url(images/bg/4.jpg) no-repeat scroll center center/cover;">
+			<div class="ht__bradcaump__wrap">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="bradcaump__inner">
+								<nav class="bradcaump-inner">
+									<a class="breadcrumb-item" href="index.html">Home</a> <span
+										class="brd-separetor"><i
+										class="zmdi zmdi-chevron-right"></i></span> <span
+										class="breadcrumb-item active">checkout</span>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="checkout-wrap ptb--100">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="checkout__inner">
+							<div class="accordion-list">
+								<div class="accordion">
+									<div class="accordion__title">Address Information</div>
+									<div class="accordion__body">
+										<div class="bilinfo">
+											<form action="#">
+												<div class="row">
+													<div class="col-md-12">
+														<div class="single-input">
+															<input type="text" name="address" placeholder="Địa Chỉ Nhận Hàng">
+														</div>
+													</div>
+													<div class="col-md-12">
+														<div class="single-input">
+															<input type="text" name="city" placeholder="Thành Phố">
+														</div>
+													</div>
+													<div class="col-md-12">
+														<div class="single-input">
+															<input type="text" name="phone" placeholder="Số Điện Thoại Nhận Hàng">
+														</div>
+													</div>
+													<div class="col-md-12" style="margin-top: 30px">
+														<div class="fr__list__btn" >
+															<button class="fr__btn" style="border: none" type="submit">Order Now</button>
+														</div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="order-details">
+							<h5 class="order-details__title">Your Order</h5>
+							<div class="order-details__item">
+								<div class="single-item" th:each="entry :${session.cart}">
+									<div class="single-item__thumb">
+										<img
+											th:src="@{'/images/flags/'+${entry.value.productDTO.image}}"
+											alt="ordered item">
+									</div>
+									<div class="single-item__content">
+										<a href="#" th:text="${entry.value.productDTO.name}"></a> <span
+											class="price" th:text="${entry.value.productDTO.price}"></span>
+									</div>
+									<div class="single-item__remove">
+										<a th:onclick="'deleteCart(\'' + ${entry.key} + '\');'"><i
+											class="zmdi zmdi-delete"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="order-details__count">
+								<div class="order-details__count__single">
+									<h5>total</h5>
+									<span class="price" th:text="${session.total}">$909.00</span>
+								</div>
+								<div class="order-details__count__single">
+									<h5>Coupon</h5>
+									<span class="price">$9.00</span>
+								</div>
+							</div>
+							<div class="ordre-details__total">
+								<h5>Order total</h5>
+								<span class="price" th:text="${session.total}"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer th:replace="common/user/footer :: footer"></footer>
+	</div>
+
+	<script th:src="@{/user/js/vendor/jquery-3.2.1.min.js}"></script>
+	<script th:src="@{/user/js/bootstrap.min.js}"></script>
+	<script th:src="@{/user/js/plugins.js}"></script>
+	<script th:src="@{/user/js/slick.min.js}"></script>
+	<script th:src="@{/user/js/owl.carousel.min.js}"></script>
+	<script th:src="@{/user/js/ajax-mail.js}"></script>
+	<script th:src="@{/user/js/waypoints.min.js}"></script>
+	<script th:src="@{/user/js/main.js}"></script>
+</body>
+</html>

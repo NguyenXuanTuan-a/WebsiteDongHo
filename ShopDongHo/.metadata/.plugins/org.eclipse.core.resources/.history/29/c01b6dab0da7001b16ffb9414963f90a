@@ -1,0 +1,20 @@
+package com.nguyenxuantuan.shopdongho.project.user;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RequestMapping("/user")
+public class OrderDetailController {
+	@GetMapping("/order-detail")
+	public String getOrderDetail(HttpServletRequest request, HttpSession httpSession) {
+		/*
+		 * if(httpSession.getAttribute("user") != null) {
+		 * 
+		 * }else { return "redirect:/login"; }
+		 */
+		return "user/order-detail";
+	}
+}

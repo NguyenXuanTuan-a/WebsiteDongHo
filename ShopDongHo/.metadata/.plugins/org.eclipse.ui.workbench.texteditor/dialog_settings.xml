@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="htc__best__pro__thumb"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="htc__best__pro__thumb"/>
+			<item value="id_subcategories"/>
+			<item value="badge-delete"/>
+			<item value="badge-complete"/>
+			<item value="/4"/>
+			<item value="4"/>
+			<item value="th:href=&quot;#&quot;"/>
+			<item value="th:href="/>
+			<item value="images/product-2/sm-smg/2.jpg"/>
+			<item value="#"/>
+			<item value="images/logo/4.png"/>
+			<item value="http://browsehappy.com/"/>
+			<item value="src"/>
+			<item value="href"/>
+		</list>
+		<list key="replacehistory">
+			<item value=""/>
+			<item value="th:src"/>
+			<item value="th:href"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="562"/>
+		<item key="DIALOG_Y_ORIGIN" value="354"/>
+		<item key="DIALOG_WIDTH" value="336"/>
+		<item key="DIALOG_HEIGHT" value="446"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

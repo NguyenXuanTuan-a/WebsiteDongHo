@@ -1,0 +1,78 @@
+<!doctype html>
+<html class="no-js" lang="">
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Admin-Order</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" th:href="@{/assets/css/normalize.css}">
+      <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+      <link rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}">
+      <link rel="stylesheet" th:href="@{/assets/css/themify-icons.css}">
+      <link rel="stylesheet" th:href="@{/assets/css/pe-icon-7-filled.css}">
+      <link rel="stylesheet" th:href="@{/assets/css/flag-icon.min.css}">
+      <link rel="stylesheet" th:href="@{/assets/css/cs-skin-elastic.css}">
+      <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+      <link th:href='@{https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800}' rel='stylesheet' type='text/css'>
+   </head>
+   <body>
+      <div th:replace="common/admin/menu :: menu"></div>
+      <div id="right-panel" class="right-panel">
+         <header th:replace="common/admin/header :: header"></header>
+         <div class="content pb-0">
+            <div class="orders">
+               <div class="row">
+                  <div class="col-xl-12">
+                     <div class="card">
+                        <div class="card-body">
+                           <h4 class="box-title">Order</h4>
+                           <br>
+                           
+                        </div>
+                        <div class="card-body--">
+                           <div class="table-stats order-table ov-h">
+                      <table class="table">
+							<thead>
+									<tr>
+										<th class="product-thumbnail">Product Name</th>
+										<th class="product-thumbnail">Product Image</th>
+										<th class="product-name">Qty</th>
+										<th class="product-price">Price</th>
+									</tr>
+								</thead>
+							<tbody>
+								
+								<tr th:each="entry :${order}">
+									<td class="product-name" th:text="${entry.productDTO.name}"></td>
+									 <td class="product-thumbnail" style="height: 150px"><a href="#" ><img th:src="@{'/images/flags/'+${entry.productDTO.image}}" alt="product img" style="height: 120px; width: 100px" /></a></td>
+									<td class="product-name" th:text="${entry.qty}"></td>
+									<td class="product-name" th:text="${entry.price}"></td>
+								</tr>
+							</tbody>
+							
+						</table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+		  </div>
+         <div class="clearfix"></div>
+         <footer class="site-footer">
+            <div class="footer-inner bg-white">
+               <div class="row">
+                  <div class="col-sm-6">
+                     Nguyen Xuan Tuan
+                  </div>
+               </div>
+            </div>
+         </footer>
+      </div>
+      <script th:src="@{/assets/js/vendor/jquery-2.1.4.min.js}" type="text/javascript"></script>
+      <script th:src="@{/assets/js/popper.min.js}" type="text/javascript"></script>
+      <script th:src="@{/assets/js/plugins.js}" type="text/javascript"></script>
+      <script th:src="@{/assets/js/main.js}" type="text/javascript"></script>
+   </body>
+</html>

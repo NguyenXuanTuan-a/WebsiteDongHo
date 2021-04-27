@@ -1,0 +1,22 @@
+package com.nguyenxuantuan.shopdongho.project.admin.RestController;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.nguyenxuantuan.shopdongho.project.model.CategoriesDTO;
+import com.nguyenxuantuan.shopdongho.project.service.CategoriesService;
+
+@RestController
+public class RestAdminCategories {
+	
+	@Autowired
+	private CategoriesService categoriesService;
+	@GetMapping("/api/admin/categories")
+	public List<CategoriesDTO> getAll(){
+		List<CategoriesDTO> categoriesDTOs = categoriesService.getAll();
+		return categoriesDTOs;
+	}
+}

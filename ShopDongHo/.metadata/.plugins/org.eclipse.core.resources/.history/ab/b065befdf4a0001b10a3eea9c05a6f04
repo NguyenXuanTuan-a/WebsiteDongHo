@@ -1,0 +1,20 @@
+
+         <header id="header" class="header" th:fragment="header">
+            <div class="top-left">
+               <div class="navbar-header">
+                  <a class="navbar-brand" th:href="index.html"><img th:src="@{/images/logo.png}" alt="Logo"></a>
+                  <a class="navbar-brand hidden" th:href="index.html"><img th:src="@{/images/logo2.png}" alt="Logo"></a>
+                  <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+               </div>
+            </div>
+            <div class="top-right">
+               <div class="header-menu">
+                  <div class="user-area dropdown float-right">
+                     <a  class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="Welcome+${#authentication.principal.username}"></a>
+                     <div class="user-menu dropdown-menu">
+                        <a class="nav-link" th:href="@{/logout}" ><i class="fa fa-power-off"></i>Logout</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </header>

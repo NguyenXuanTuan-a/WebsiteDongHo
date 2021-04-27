@@ -1,0 +1,148 @@
+<!doctype html >
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Order-Detail</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{user/images/favicon.ico}">
+    <link rel="apple-touch-icon" th:href="apple-touch-icon.png">
+    
+
+   
+    <link rel="stylesheet" th:href="@{/user/css/bootstrap.min.css}">
+    
+    <link rel="stylesheet" th:href="@{/user/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/user/css/owl.theme.default.min.css}">
+
+    <link rel="stylesheet" th:href="@{/user/css/core.css}">
+    
+    <link rel="stylesheet" th:href="@{/user/css/shortcode/shortcodes.css}">
+    
+    <link rel="stylesheet" th:href="@{/user/css/style.css}">
+    
+    <link rel="stylesheet" th:href="@{/user/css/responsive.css}">
+   
+    <link rel="stylesheet" th:href="@{/user/css/custom.css}">
+
+
+    
+    <script th:src="@{/user/js/vendor/modernizr-3.5.0.min.js}"></script>
+</head>
+
+<body>
+   
+    <div class="wrapper">
+       
+  			<header th:replace="common/user/header :: header"></header>
+       
+
+        <div class="body__overlay"></div>
+        <!-- Start Offset Wrapper -->
+        <div class="offset__wrapper">
+            <!-- Start Search Popap -->
+            <div class="search__area">
+                <div class="container" >
+                    <div class="row" >
+                        <div class="col-md-12" >
+                            <div class="search__inner">
+                                <form action="#" method="get">
+                                    <input placeholder="Search here... " type="text">
+                                    <button type="submit"></button>
+                                </form>
+                                <div class="search__close__btn">
+                                    <span class="search__close__btn_icon"><i class="zmdi zmdi-close"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Search Popap -->
+            <!-- Start Cart Panel -->
+            <div class="shopping__cart">
+                <div class="shopping__cart__inner">
+              
+            </div>
+            <!-- End Cart Panel -->
+        </div>
+        <!-- End Offset Wrapper -->
+        <!-- Start Bradcaump area -->
+        <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/bg/4.jpg) no-repeat scroll center center / cover ;">
+            <div class="ht__bradcaump__wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="bradcaump__inner">
+                                <nav class="bradcaump-inner">
+                                  <a class="breadcrumb-item" href="index.html">Home</a>
+                                  <span class="brd-separetor"><i class="zmdi zmdi-chevron-right"></i></span>
+                                  <span class="breadcrumb-item active">Order Detail</span>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Bradcaump area -->
+        <!-- cart-main-area start -->
+        <div class="cart-main-area ptb--100 bg__white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <form action="#">               
+                            <div class="table-content table-responsive">
+                                <table>
+                                    <thead>
+									<tr>
+										<th class="product-thumbnail">Product Name</th>
+										<th class="product-thumbnail">Product Image</th>
+										<th class="product-name">Qty</th>
+										<th class="product-price">Price</th>
+										<th class="product-price">Total Price</th>
+									</tr>
+								</thead>
+                                    <tbody>
+                                        <tr th:each="entry: ${order}">
+                                            <td class="product-name"><a th:text="${entry.productDTO.name}"></a></td>
+                                            <td class="product-thumbnail"><a href="#"><img th:src="@{'/images/flags/'+${entry.productDTO.image}}" alt="product img" /></a></td>
+											<td class="product-price"><span class="amount" th:text="${entry.price}"></span></td>
+											<td class="product-price"><span class="amount" th:text="${entry.qty}"></span></td>                                       
+                                        </tr>
+                                        
+                                   </tbody> 
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="buttons-cart--inner">
+                                        <div class="buttons-cart">
+                                            <a th:href="@{/}">Continue Shopping</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+		<footer th:replace="common/user/footer :: footer"></footer>
+    </div>
+
+    <script th:src="@{/user/js/vendor/jquery-3.2.1.min.js}"></script>
+    <script th:src="@{/user/js/bootstrap.min.js}"></script> 
+    <script th:src="@{/user/js/plugins.js}"></script>
+    <script th:src="@{/user/js/slick.min.js}"></script>
+    <script th:src="@{/user/js/owl.carousel.min.js}"></script>
+    <script th:src="@{/user/js/ajax-mail.js}"></script>
+    <script th:src="@{/user/js/waypoints.min.js}"></script>
+    <script th:src="@{/user/js/main.js}"></script>
+
+</body>
+
+</html>
