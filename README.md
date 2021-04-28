@@ -30,4 +30,4 @@
 
 ### Demo
 
-<img src=https://imgur.com/7t1hyOO>
+<img src=https://i.imgur.com/7t1hyOO.png>
