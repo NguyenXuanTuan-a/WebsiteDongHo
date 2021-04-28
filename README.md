@@ -26,6 +26,8 @@
 - Admin có thể thêm, sửa, xóa tất cả các sản phẩm, biết được số sản phẩm còn lại bao nhiêu
 - Admin có thể xem được tất cả các đơn hàng của khách hàng
 
+
+
 ### Demo
 
 <img src=http://i.imgur.com/qkmdJSR.png>
