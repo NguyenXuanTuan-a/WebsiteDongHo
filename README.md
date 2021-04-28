@@ -3,14 +3,14 @@
 
 # Sử dụng công nghệ
 
-- Gạch đầu dòng thứ nhất
+- Backend:
   
-  - Thụt với đầu dòng 1
+  - Spring (Boot, Data, Security)
   
-  - Thụt với đầu dòng 1
+  - JPA / Hibernate
   
-- Gạch đầu dòng thứ hai
+  - Thymeleaf
   
-  - Thụt với đầu dòng 2
+- Fontend
   
-  - Thụt với đầu dòng 2
+  - HTML, CSS, JS
