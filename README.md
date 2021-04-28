@@ -55,5 +55,10 @@
 | ------------- |:-------------:|
 | <img src=https://i.imgur.com/K2YHoso.png>      | <img src=https://i.imgur.com/EcM8HeP.png>     |
 
+| Danh Sách Khách Hàng  | Danh Sách Đơn Hàng |
+| ------------- |:-------------:|
+| <img src=https://i.imgur.com/c8duIS6.png>      | <img src=https://i.imgur.com/5u9p3DJ.png>     |
+
+
 
 
