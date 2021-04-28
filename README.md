@@ -30,4 +30,7 @@
 
 ### Demo
 
-<img src=https://i.imgur.com/7t1hyOO.png>
+| Trang chủ 
+| ------------- 
+| <img src=https://i.imgur.com/7t1hyOO.png>         
+
