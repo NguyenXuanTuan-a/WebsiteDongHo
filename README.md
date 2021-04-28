@@ -30,7 +30,30 @@
 
 ### Demo
 
-| #### Trang chủ 
+| Trang chủ 
 | ------------- 
-| <img src=https://i.imgur.com/7t1hyOO.png>         
+| <img src=https://i.imgur.com/7t1hyOO.png>   
+
+
+| Menu 
+| ------------- 
+| <img src=https://i.imgur.com/q07oZXm.png> 
+
+| Đăng nhập và Đăng ký 
+| ------------- 
+| <img src=https://i.imgur.com/x11rie3.png> 
+
+| Đơn Hàng 
+| ------------- 
+| <img src=https://i.imgur.com/ODipsPs.png> 
+
+| Chi Tiết Đơn Hàng 
+| ------------- 
+| <img src=https://i.imgur.com/PPDTCk0.png> 
+
+| Danh Sách Sản Phẩm  | Danh Sách Loại |
+| ------------- |:-------------:|
+| <img src=https://i.imgur.com/K2YHoso.png>      | <img src=https://i.imgur.com/EcM8HeP.png>     |
+
+
 
