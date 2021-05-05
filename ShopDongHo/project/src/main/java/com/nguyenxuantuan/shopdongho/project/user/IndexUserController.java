@@ -79,4 +79,6 @@ public class IndexUserController {
 		userService.add(userDTO);
 		return "redirect:/login";
 	}
+	
+	
 }

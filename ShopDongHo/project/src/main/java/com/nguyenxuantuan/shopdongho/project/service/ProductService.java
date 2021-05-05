@@ -22,6 +22,7 @@ public interface ProductService {
 	public void update(ProductDTO productDTO);
 	public List<ProductDTO> getByIdCategories(int id_categories);
 	public List<ProductDTO> getByIdSubCategories(int id_subcategories);
+	public List<ProductDTO> searchProductName(String name);
 }
 
 @Service
@@ -153,6 +154,31 @@ class ProductServiceImpl implements ProductService{
 	@Override
 	public List<ProductDTO> getByIdSubCategories(int id_subcategories) {
 		List<ProductEntity> productEntities = productDao.getByIdSubCategories(id_subcategories);
+		List<ProductDTO> productDTOs = new ArrayList<ProductDTO>();
+		for(ProductEntity pro : productEntities) {
+			ProductDTO productDTO = new ProductDTO();
+			productDTO.setId(pro.getId());
+			productDTO.setId_categories(pro.getId_categories());
+			productDTO.setId_subcategories(pro.getId_subcategories());
+			productDTO.setName(pro.getName());
+			productDTO.setImage(pro.getImage());
+			productDTO.setMrp(pro.getMrp());
+			productDTO.setPrice(pro.getPrice());
+			productDTO.setQty(pro.getQty());
+			productDTO.setShort_desc(pro.getShort_desc());
+			productDTO.setDescription(pro.getDescription());
+			productDTO.setBest_seller(pro.getBest_seller());
+			productDTO.setMeta_desc(pro.getMeta_desc());
+			productDTO.setMeta_keyword(pro.getMeta_keyword());
+			productDTO.setMeta_title(pro.getMeta_title());
+			productDTO.setStatus(pro.getStatus());
+			productDTOs.add(productDTO);
+		}
+		return productDTOs;
+	}
+	@Override
+	public List<ProductDTO> searchProductName(String name) {
+		List<ProductEntity> productEntities = productDao.searchProductByNam(name);
 		List<ProductDTO> productDTOs = new ArrayList<ProductDTO>();
 		for(ProductEntity pro : productEntities) {
 			ProductDTO productDTO = new ProductDTO();

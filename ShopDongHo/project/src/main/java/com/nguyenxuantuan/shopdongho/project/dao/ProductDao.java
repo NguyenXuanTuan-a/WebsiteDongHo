@@ -18,6 +18,7 @@ public interface ProductDao {
 	public void update(ProductEntity productEntity);
 	public List<ProductEntity> getByIdCategories(int id_categories);
 	public List<ProductEntity> getByIdSubCategories(int id_subcategories);
+	public List<ProductEntity> searchProductByNam(String name);
 }
 @Transactional
 @Repository
@@ -57,5 +58,10 @@ class ProductDaoImpl implements ProductDao{
 	public List<ProductEntity> getByIdSubCategories(int id_subcategories) {
 		String jql ="Select p from ProductEntity p where p.id_subcategories =: id_subcategories";
 		return entityManager.createQuery(jql,ProductEntity.class).setParameter("id_subcategories", id_subcategories).getResultList();
+	}
+	@Override
+	public List<ProductEntity> searchProductByNam(String name) {
+		String jql ="Select p from ProductEntity p where p.name LIKE :name";
+		return entityManager.createQuery(jql,ProductEntity.class).setParameter("name", name).getResultList();
 	}
 }
